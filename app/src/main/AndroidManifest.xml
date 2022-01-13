@@ -11,8 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MarkDown">
-        <activity android:name=".MarkDownActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MarkDownActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
