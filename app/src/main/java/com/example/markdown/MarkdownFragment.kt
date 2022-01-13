@@ -15,5 +15,5 @@ class MarkdownFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_markdown, container, false)
     }
 
-    
+
 }
