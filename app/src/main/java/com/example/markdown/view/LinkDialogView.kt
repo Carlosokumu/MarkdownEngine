@@ -32,6 +32,9 @@ class LinkDialogView : LinearLayout {
     constructor(context: Context): super(context){
         init(context)
     }
+
+
+
     constructor(context: Context,attributeSet: AttributeSet): super(context,attributeSet){
         init(context)
     }

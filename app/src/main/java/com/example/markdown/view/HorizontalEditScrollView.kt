@@ -2,13 +2,15 @@ package com.example.markdown.view
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.LayoutInflater
 import android.widget.FrameLayout
+import com.example.markdown.R
 import com.example.markdown.controller.*
 import com.yydcdut.markdown.MarkdownConfiguration
 import com.yydcdut.markdown.MarkdownEditText
 
 
-class HorizontalEditScrollView() : FrameLayout() {
+class HorizontalEditScrollView : FrameLayout {
     private var mMarkdownEditText: MarkdownEditText? = null
 
     private var mHeaderController: HeaderController? = null
@@ -24,8 +26,14 @@ class HorizontalEditScrollView() : FrameLayout() {
     private var mLinkController: LinkController? = null
 
 
+     constructor(context: Context): this(context,null)
+     constructor (context: Context,attrs: AttributeSet,defStyleAttr: Int): super(context,attrs,defStyleAttr){
+         LayoutInflater.from(context).inflate(R.layout.layout_horizontal_scroll, this, true);
+     }
 
-     constructor (context: Context,attrs: AttributeSet,defStyleAttr: Int): super(context,attrs,defStyleAttr)
+     constructor(context: Context, attrs: AttributeSet?): this(context,attrs!!,0)
+
+
 
 
     fun setEditTextAndConfig(markdownEditText: MarkdownEditText, markdownConfiguration: MarkdownConfiguration) {
