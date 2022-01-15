@@ -29,7 +29,8 @@ class MarkDownActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         findViewById<BottomNavigationView>(R.id.nav_view).apply {
-            setupWithNavController(navController)
+           // setupWithNavController(navController)
+            this.setupWithNavController(navController)
         }
 
     }

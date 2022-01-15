@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <com.yydcdut.markdowndemo.view.EditScrollView
+        android:id="@+id/edit_scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/scroll_edit">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.yydcdut.rxmarkdown.RxMDEditText
+                android:id="@+id/edit_rx"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="left|top"
+                android:visibility="gone"/>
+
+            <com.yydcdut.markdown.MarkdownEditText
+                android:id="@+id/edit_md"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="left|top"
+                android:visibility="gone"/>
+        </FrameLayout>
+    </com.yydcdut.markdowndemo.view.EditScrollView>
+
+    <com.yydcdut.markdowndemo.view.HorizontalEditScrollView
+        android:id="@+id/scroll_edit"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true">
+    </com.yydcdut.markdowndemo.view.HorizontalEditScrollView>
+</RelativeLayout>
