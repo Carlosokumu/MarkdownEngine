@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <com.yydcdut.markdowndemo.view.EditScrollView
+    <com.example.markdown.view.EditScrollView
         android:id="@+id/edit_scroll"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -33,12 +33,12 @@
                 android:gravity="left|top"
                 android:visibility="gone"/>
         </FrameLayout>
-    </com.yydcdut.markdowndemo.view.EditScrollView>
+    </com.example.markdown.view.EditScrollView>
 
-    <com.yydcdut.markdowndemo.view.HorizontalEditScrollView
+    <com.example.markdown.view.HorizontalEditScrollView
         android:id="@+id/scroll_edit"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true">
-    </com.yydcdut.markdowndemo.view.HorizontalEditScrollView>
+    </com.example.markdown.view.HorizontalEditScrollView>
 </RelativeLayout>
