@@ -11,12 +11,12 @@ class HorizontalRulesController(private val mRxMDEditText: MarkdownEditText) {
 
 
     fun doHorizontalRules() {
-        val start: Int = mRxMDEditText.getSelectionStart()
-        val end: Int = mRxMDEditText.getSelectionEnd()
-        val position0: Int = Utils.findBeforeNewLineChar(mRxMDEditText.getText(), start) + 1
-        val position00: Int = Utils.findBeforeNewLineChar(mRxMDEditText.getText(), end) + 1
+        val start: Int = mRxMDEditText.selectionStart
+        val end: Int = mRxMDEditText.selectionEnd
+        val position0: Int = Utils.findBeforeNewLineChar(mRxMDEditText.text, start) + 1
+        val position00: Int = Utils.findBeforeNewLineChar(mRxMDEditText.text, end) + 1
         if (position0 != position00) {
-            Toast.makeText(mRxMDEditText.getContext(), "无法操作多行", Toast.LENGTH_SHORT).show()
+            Toast.makeText(mRxMDEditText.context, "无法操作多行", Toast.LENGTH_SHORT).show()
             return
         }
         val mdHorizontalRulesSpan: MDHorizontalRulesSpan? = Utils.getSpans(
@@ -27,11 +27,11 @@ class HorizontalRulesController(private val mRxMDEditText: MarkdownEditText) {
             val editable: Editable = mRxMDEditText.getText()
             val spanStart = editable.getSpanStart(mdHorizontalRulesSpan)
             val spanEnd = editable.getSpanEnd(mdHorizontalRulesSpan)
-            mRxMDEditText.getText().removeSpan(mdHorizontalRulesSpan)
-            mRxMDEditText.getText().delete(spanStart, spanEnd)
+            mRxMDEditText.text.removeSpan(mdHorizontalRulesSpan)
+            mRxMDEditText.text.delete(spanStart, spanEnd)
         } else {
-            val c0: Char = mRxMDEditText.getText().charAt(if (start <= 0) 0 else start - 1)
-            val c1: Char = mRxMDEditText.getText().charAt(if (end >= mRxMDEditText.length() - 1) mRxMDEditText.length() - 1 else end + 1)
+            val c0: Char = mRxMDEditText.text.charAt(if (start <= 0) 0 else start - 1)
+            val c1: Char = mRxMDEditText.text.charAt(if (end >= mRxMDEditText.length() - 1) mRxMDEditText.length() - 1 else end + 1)
             val sb = StringBuilder()
             if (c0 != '\n' && start != 0) {
                 sb.append("\n")
@@ -40,7 +40,7 @@ class HorizontalRulesController(private val mRxMDEditText: MarkdownEditText) {
             if (c1 != '\n' || end >= mRxMDEditText.length()) {
                 sb.append("\n")
             }
-            mRxMDEditText.getText().insert(start, sb.toString())
+            mRxMDEditText.text.insert(start, sb.toString())
         }
     }
 }
