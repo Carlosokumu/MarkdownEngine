@@ -1,6 +1,7 @@
 package com.example.markdown.controller
 
 import android.text.Editable
+import android.widget.EditText
 import android.widget.Toast
 import com.example.markdown.Utils
 import com.yydcdut.markdown.MarkdownEditText
@@ -30,8 +31,9 @@ class HorizontalRulesController(private val mRxMDEditText: MarkdownEditText) {
             mRxMDEditText.text.removeSpan(mdHorizontalRulesSpan)
             mRxMDEditText.text.delete(spanStart, spanEnd)
         } else {
-            val c0: Char = mRxMDEditText.text.charAt(if (start <= 0) 0 else start - 1)
-            val c1: Char = mRxMDEditText.text.charAt(if (end >= mRxMDEditText.length() - 1) mRxMDEditText.length() - 1 else end + 1)
+            /*
+            //val c0: Char = mRxMDEditText.text.charAt(if (start <= 0) 0 else start - 1)
+            //val c1: Char = mRxMDEditText.text.charAt(if (end >= mRxMDEditText.length() - 1) mRxMDEditText.length() - 1 else end + 1)
             val sb = StringBuilder()
             if (c0 != '\n' && start != 0) {
                 sb.append("\n")
@@ -41,6 +43,8 @@ class HorizontalRulesController(private val mRxMDEditText: MarkdownEditText) {
                 sb.append("\n")
             }
             mRxMDEditText.text.insert(start, sb.toString())
+
+             */
         }
     }
 }

@@ -14,6 +14,9 @@
         <action
             android:id="@+id/html_to_laTex"
             app:destination="@id/laTex" />
+        <action
+            android:id="@+id/action_html_to_addMarkdown"
+            app:destination="@id/addMarkdown" />
 
     </fragment>
 
@@ -22,6 +25,13 @@
         android:name="com.example.markdown.LaTex"
         android:label="fragment_la_tex"
         tools:layout="@layout/fragment_la_tex" />
+    <fragment
+        android:id="@+id/addMarkdown"
+        android:name="com.example.markdown.AddMarkdown"
+        tools:layout="@layout/fragment_add_markdown"
+        android:label="AddMarkdown" >
+
+    </fragment>
 
 
 </navigation>

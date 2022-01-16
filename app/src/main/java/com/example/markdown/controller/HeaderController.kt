@@ -10,14 +10,14 @@ import com.yydcdut.markdown.MarkdownEditText
 class HeaderController(private val mRxMDEditText: MarkdownEditText,private val mRxMDConfiguration: MarkdownConfiguration) {
 
     fun doHeader(headerNumber: Int) {
-        val start: Int = mRxMDEditText.getSelectionStart()
-        val end: Int = mRxMDEditText.getSelectionEnd()
-        var position0: Int = Utils.findBeforeNewLineChar(mRxMDEditText.getText(), start) + 1
-        val position1: Int = Utils.findBeforeNewLineChar(mRxMDEditText.getText(), end) + 1
+        val start: Int = mRxMDEditText.selectionStart
+        val end: Int = mRxMDEditText.selectionEnd
+        var position0: Int = Utils.findBeforeNewLineChar(mRxMDEditText.text, start) + 1
+        val position1: Int = Utils.findBeforeNewLineChar(mRxMDEditText.text, end) + 1
         if (position0 == position1) {
             val hasCenterSpan: Boolean = Utils.hasCenterSpan(mRxMDEditText, start, end)
             if (hasCenterSpan) {
-                position0 = position0 + 1
+                position0 += 1
             }
             val relativeSizeSpan: RelativeSizeSpan? = Utils.getSpans(
                 mRxMDEditText, start, end,
@@ -29,7 +29,7 @@ class HeaderController(private val mRxMDEditText: MarkdownEditText,private val m
             }
             replace(position0, headerNumber, headerNumber, relativeSizeSpan)
         } else { //多行
-            Toast.makeText(mRxMDEditText.getContext(), "无法操作多行", Toast.LENGTH_SHORT).show()
+            Toast.makeText(mRxMDEditText.context, "无法操作多行", Toast.LENGTH_SHORT).show()
         }
     }
     private fun replace(
@@ -38,31 +38,31 @@ class HeaderController(private val mRxMDEditText: MarkdownEditText,private val m
         addHeaderNumber: Int,
         relativeSizeSpan: RelativeSizeSpan
     ) {
-        if (relativeSizeSpan.sizeChange == mRxMDConfiguration.getHeader1RelativeSize()) {
+        if (relativeSizeSpan.sizeChange == mRxMDConfiguration.header1RelativeSize) {
             deleteHeaderKey(startPosition, 1)
             mRxMDEditText.text.removeSpan(relativeSizeSpan)
             if (deleteHeaderNumber != 1) {
                 addHeaderKey(startPosition, addHeaderNumber)
             }
-        } else if (relativeSizeSpan.sizeChange == mRxMDConfiguration.getHeader2RelativeSize()) {
+        } else if (relativeSizeSpan.sizeChange == mRxMDConfiguration.header2RelativeSize) {
             deleteHeaderKey(startPosition, 2)
             mRxMDEditText.text.removeSpan(relativeSizeSpan)
             if (deleteHeaderNumber != 2) {
                 addHeaderKey(startPosition, addHeaderNumber)
             }
-        } else if (relativeSizeSpan.sizeChange == mRxMDConfiguration.getHeader3RelativeSize()) {
+        } else if (relativeSizeSpan.sizeChange == mRxMDConfiguration.header3RelativeSize) {
             deleteHeaderKey(startPosition, 3)
             mRxMDEditText.text.removeSpan(relativeSizeSpan)
             if (deleteHeaderNumber != 3) {
                 addHeaderKey(startPosition, addHeaderNumber)
             }
-        } else if (relativeSizeSpan.sizeChange == mRxMDConfiguration.getHeader4RelativeSize()) {
+        } else if (relativeSizeSpan.sizeChange == mRxMDConfiguration.header4RelativeSize) {
             deleteHeaderKey(startPosition, 4)
             mRxMDEditText.text.removeSpan(relativeSizeSpan)
             if (deleteHeaderNumber != 4) {
                 addHeaderKey(startPosition, addHeaderNumber)
             }
-        } else if (relativeSizeSpan.sizeChange == mRxMDConfiguration.getHeader5RelativeSize()) {
+        } else if (relativeSizeSpan.sizeChange == mRxMDConfiguration.header5RelativeSize) {
             deleteHeaderKey(startPosition, 5)
             mRxMDEditText.text.removeSpan(relativeSizeSpan)
             if (deleteHeaderNumber != 5) {

@@ -1,6 +1,6 @@
 package com.example.markdown.view
 
-import android.R
+
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -20,9 +20,10 @@ import com.nostra13.universalimageloader.core.ImageLoader
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType
 import java.io.File
+import  com.example.markdown.R
 
 
-class ImageDialogView : LinearLayout,View.OnClickListener, PopupMenu.OnMenuItemClickListener {
+class ImageDialogView : LinearLayout, View.OnClickListener, PopupMenu.OnMenuItemClickListener {
 
 
     private var mWidthEditText: EditText? = null
@@ -33,25 +34,22 @@ class ImageDialogView : LinearLayout,View.OnClickListener, PopupMenu.OnMenuItemC
     private var mCurrentCameraPictureIndex = 0
 
 
-
-
-
     companion object {
         private const val REQUEST_CAMERA = 10
         private const val REQUEST_GALLERY = 11
-        private val DEFAULT_PATH = "drawable://" + R.mipmap.ic_launcher
+        private const val DEFAULT_PATH = "drawable://" + R.mipmap.ic_launcher
 
 
     }
 
 
     private fun init(context: Context) {
-        val v: View = LayoutInflater.from(context).inflate(R.layout.dialog_image, this, true)
-        mTargetImageView = v.findViewById(R.id.img_image) as ImageView
-        mTargetImageView!!.setOnClickListener(this)
-        mWidthEditText = v.findViewById(R.id.edit_width) as EditText
-        mHeightEditText = v.findViewById(R.id.edit_height) as EditText
-        mDescriptionEditText = v.findViewById(R.id.edit_description) as EditText
+         val v: View = LayoutInflater.from(context).inflate(R.layout.dialog_image, this, true)
+         mTargetImageView = v.findViewById(R.id.img_image) as ImageView
+         mTargetImageView!!.setOnClickListener(this)
+         mWidthEditText = v.findViewById(R.id.edit_width) as EditText
+         mHeightEditText = v.findViewById(R.id.edit_height) as EditText
+         mDescriptionEditText = v.findViewById(R.id.edit_description) as EditText
         if (!ImageLoader.getInstance().isInited()) {
             val config: ImageLoaderConfiguration.Builder = ImageLoaderConfiguration.Builder(
                 mTargetImageView!!.getContext()
@@ -66,21 +64,20 @@ class ImageDialogView : LinearLayout,View.OnClickListener, PopupMenu.OnMenuItemC
     }
 
 
-
     constructor(context: Context, attributeSet: AttributeSet, defStyleAttr: Int) : super(
         context,
         attributeSet,
         defStyleAttr
-    ){
+    ) {
         init(context)
     }
 
 
-
-    constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet){
+    constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet) {
         init(context)
     }
-    constructor(context: Context) : super(context){
+
+    constructor(context: Context) : super(context) {
         init(context)
     }
 
@@ -90,12 +87,12 @@ class ImageDialogView : LinearLayout,View.OnClickListener, PopupMenu.OnMenuItemC
             mTargetImageView!!
         )
         val inflater = popup.menuInflater
-        inflater.inflate(R.menu.menu_popup, popup.menu)
+        // inflater.inflate(R.menu.menu_popup, popup.menu)
         popup.setOnMenuItemClickListener(this)
         popup.show()
     }
 
-    override fun onMenuItemClick(item: MenuItem?): Boolean{
+    override fun onMenuItemClick(item: MenuItem?): Boolean {
 
         var activity: Activity? = null
         activity = if (context is Activity) {
@@ -104,7 +101,11 @@ class ImageDialogView : LinearLayout,View.OnClickListener, PopupMenu.OnMenuItemC
             Log.e("Carlos", "not activity")
             return false
         }
+
+
         when (item!!.itemId) {
+
+
             R.id.action_gallery -> {
                 val albumIntent = Intent(Intent.ACTION_PICK, null)
                 albumIntent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*")
@@ -120,8 +121,16 @@ class ImageDialogView : LinearLayout,View.OnClickListener, PopupMenu.OnMenuItemC
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file))
                 activity!!.startActivityForResult(intent, REQUEST_CAMERA)
             }
+
+
         }
+
+
         return false
+
+
+
+
     }
 
 

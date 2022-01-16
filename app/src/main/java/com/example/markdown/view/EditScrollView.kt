@@ -7,9 +7,17 @@ import android.widget.ScrollView
 
 
 
-class EditScrollView(context: Context, attrs: AttributeSet, defStyleAttr: Int): ScrollView(context, attrs,defStyleAttr) {
+class EditScrollView: ScrollView {
     lateinit var listener: onScrollChangedListener
 
+
+    constructor(context: Context): super(context)
+    constructor(context: Context,attrs: AttributeSet): super(context, attrs)
+    constructor (context: Context, attrs: AttributeSet?, defStyleAttr: Int): super(
+        context,
+        attrs,
+        defStyleAttr
+    )
 
     fun setOnScrollChangedListener(listener: onScrollChangedListener){
         this.listener =listener

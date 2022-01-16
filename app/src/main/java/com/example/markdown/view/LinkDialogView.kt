@@ -1,10 +1,11 @@
 package com.example.markdown.view
 
-import android.R
+
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
+import  com.example.markdown.R
 import android.widget.EditText
 import android.widget.LinearLayout
 
@@ -17,7 +18,7 @@ class LinkDialogView : LinearLayout {
 
 
     private fun init(context: Context) {
-        val v: View = LayoutInflater.from(context).inflate(R.layout.dialog_link, this, true)
+         val v: View = LayoutInflater.from(context).inflate(R.layout.dialog_link, this, true)
         mDescriptionEditText = v.findViewById(R.id.edit_description_link) as EditText
         mLinkEditText = v.findViewById(R.id.edit_link) as EditText
     }

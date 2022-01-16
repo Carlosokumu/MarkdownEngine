@@ -1,5 +1,6 @@
 package com.example.markdown.controller
 
+import android.content.Intent
 import android.text.TextUtils
 import android.view.ViewGroup
 import android.widget.LinearLayout
@@ -53,6 +54,11 @@ class ImageController(private val mRxMDEditText: MarkdownEditText? = null) {
             ) { dialog, which -> dialog.dismiss() }
             .setCancelable(false)
             .create()
+    }
+
+
+    fun handleResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        mImageDialogView!!.handleResult(requestCode, resultCode, data)
     }
 
 
