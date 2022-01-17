@@ -20,13 +20,14 @@ class AddMarkdown : Fragment(), EditScrollView.onScrollChangedListener {
     private val mRxMDEditText: RxMDEditText? = null
     private var mMarkdownEditText: MarkdownEditText? = null
     private var mMarkdownProcessor: MarkdownProcessor? = null
-    private val mHorizontalEditScrollView: HorizontalEditScrollView? = null
+    private var mHorizontalEditScrollView: HorizontalEditScrollView? = null
     private var mShortestDistance = -1
     private  var isRx: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_add_markdown, container, false)
         val editScrollView = v.findViewById(R.id.edit_scroll) as EditScrollView
+        mHorizontalEditScrollView =v.findViewById(R.id.scroll_edit) as HorizontalEditScrollView
         mMarkdownEditText = v.findViewById(R.id.edit_md)
        // mRxMDEditText = v.findViewById(R.id.edit_rx)
         mMarkdownEditText?.visibility = View.VISIBLE
