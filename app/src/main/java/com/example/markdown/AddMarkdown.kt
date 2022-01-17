@@ -29,7 +29,9 @@ class AddMarkdown : Fragment(), EditScrollView.onScrollChangedListener {
         val editScrollView = v.findViewById(R.id.edit_scroll) as EditScrollView
         mMarkdownEditText = v.findViewById(R.id.edit_md)
        // mRxMDEditText = v.findViewById(R.id.edit_rx)
+        mMarkdownEditText?.visibility = View.VISIBLE
        editScrollView.setOnScrollChangedListener(this)
+        markdown()
        return  v
 
     }
@@ -66,7 +68,7 @@ class AddMarkdown : Fragment(), EditScrollView.onScrollChangedListener {
 
     override fun ScrollChanged(l: Int, t: Int, oldl: Int, oldt: Int) {
         if (mShortestDistance == -1) {
-            mShortestDistance = mRxMDEditText?.lineHeight!! * 3 / 2;
+          //  mShortestDistance = mRxMDEditText?.lineHeight!! * 3 / 2;
         }
 
     }

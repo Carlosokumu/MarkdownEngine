@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.Toast
 import com.example.markdown.R
 import com.example.markdown.controller.*
 import com.yydcdut.markdown.MarkdownConfiguration
@@ -95,8 +96,13 @@ class HorizontalEditScrollView : FrameLayout, View.OnClickListener, View.OnLongC
             return
         }
         when (v.getId()) {
-            R.id.img_header1 -> mHeaderController!!.doHeader(1)
-            R.id.img_header2 -> mHeaderController!!.doHeader(2)
+            R.id.img_header1 -> {
+                mHeaderController!!.doHeader(1)
+            }
+            R.id.img_header2 ->{
+                mHeaderController!!.doHeader(2)
+                Toast.makeText(v.context,"Clicked",Toast.LENGTH_SHORT).show()
+            }
             R.id.img_header3 -> mHeaderController!!.doHeader(3)
             R.id.img_header4 -> mHeaderController!!.doHeader(4)
             R.id.img_header5 -> mHeaderController!!.doHeader(5)
