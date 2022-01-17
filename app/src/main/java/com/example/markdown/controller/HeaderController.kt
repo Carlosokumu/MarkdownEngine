@@ -23,12 +23,12 @@ class HeaderController(private val mRxMDEditText: MarkdownEditText,private val m
                 mRxMDEditText, start, end,
                 RelativeSizeSpan::class.java
             )
-            if (relativeSizeSpan == null) { //没有的话,就直接加上
+            if (relativeSizeSpan == null) {
                 addHeaderKey(position0, headerNumber)
                 return
             }
             replace(position0, headerNumber, headerNumber, relativeSizeSpan)
-        } else { //多行
+        } else {
             Toast.makeText(mRxMDEditText.context, "无法操作多行", Toast.LENGTH_SHORT).show()
         }
     }

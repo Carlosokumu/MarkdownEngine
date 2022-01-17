@@ -41,7 +41,7 @@ class ImageController(private val mRxMDEditText: MarkdownEditText? = null) {
     private fun initDialog() {
         mAlertDialog = AlertDialog.Builder(mRxMDEditText!!.context)
             .setView(mImageDialogView)
-            .setPositiveButton("确定") { dialog, which ->
+            .setPositiveButton("Ok") { dialog, _ ->
                 dialog.dismiss()
                 val width = mImageDialogView!!.getImageWidth()
                 val height = mImageDialogView!!.getImageHeight()
@@ -49,9 +49,7 @@ class ImageController(private val mRxMDEditText: MarkdownEditText? = null) {
                 val description = mImageDialogView!!.getDescription()
                 doRealImage(width, height, path!!, description!!)
             }
-            .setNegativeButton(
-                "取消"
-            ) { dialog, which -> dialog.dismiss() }
+            .setNegativeButton("Cancel") { dialog, _ -> dialog.dismiss() }
             .setCancelable(false)
             .create()
     }

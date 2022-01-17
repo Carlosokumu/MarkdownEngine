@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="?selectableItemBackground"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical">
@@ -61,7 +62,7 @@
             android:id="@+id/edit_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="描述"
+            android:hint="description"
             android:textColor="@android:color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
 </LinearLayout>

@@ -31,6 +31,9 @@ class AddMarkdown : Fragment(), EditScrollView.onScrollChangedListener {
         mMarkdownEditText = v.findViewById(R.id.edit_md)
        // mRxMDEditText = v.findViewById(R.id.edit_rx)
         mMarkdownEditText?.visibility = View.VISIBLE
+        mMarkdownEditText?.setOnClickListener {
+
+        }
        editScrollView.setOnScrollChangedListener(this)
         markdown()
        return  v

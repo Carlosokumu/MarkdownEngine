@@ -70,7 +70,7 @@ class HorizontalEditScrollView : FrameLayout, View.OnClickListener, View.OnLongC
     override fun onFinishInflate() {
         super.onFinishInflate()
         findViewById<ImageView>(R.id.img_header1).setOnClickListener(this);
-        findViewById<ImageView>(R.id.img_header2).setOnClickListener(this);
+        view!!.findViewById<ImageView>(R.id.img_header2).setOnClickListener(this);
         findViewById<ImageView>(R.id.img_header3).setOnClickListener(this);
         findViewById<ImageView>(R.id.img_header4).setOnClickListener(this);
         findViewById<ImageView>(R.id.img_header5).setOnClickListener(this);
@@ -101,7 +101,6 @@ class HorizontalEditScrollView : FrameLayout, View.OnClickListener, View.OnLongC
             }
             R.id.img_header2 ->{
                 mHeaderController!!.doHeader(2)
-                Toast.makeText(v.context,"Clicked",Toast.LENGTH_SHORT).show()
             }
             R.id.img_header3 -> mHeaderController!!.doHeader(3)
             R.id.img_header4 -> mHeaderController!!.doHeader(4)
