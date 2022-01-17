@@ -1,4 +1,15 @@
 package com.example.markdown
 
-class MarkDown {
+import android.app.Application
+
+class MarkDown: Application() {
+
+
+
+
+
+    override fun onCreate() {
+        super.onCreate()
+        MarKBox.init(this)
+    }
 }

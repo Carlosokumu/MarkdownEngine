@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id "androidx.navigation.safeargs"
-    id("kotlin-kapt") // Only for Kotlin projects.
+    id("kotlin-kapt")
     id("io.objectbox")
 
 }

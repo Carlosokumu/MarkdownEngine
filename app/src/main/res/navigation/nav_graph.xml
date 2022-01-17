@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/html"
-        android:name="com.example.markdown.MarkdownFragment"
+        android:name="com.example.markdown.fragments.MarkdownFragment"
         android:label="@string/html"
         tools:layout="@layout/fragment_markdown">
         <action
@@ -22,12 +22,12 @@
 
     <fragment
         android:id="@+id/laTex"
-        android:name="com.example.markdown.LaTex"
+        android:name="com.example.markdown.fragments.LaTex"
         android:label="fragment_la_tex"
         tools:layout="@layout/fragment_la_tex" />
     <fragment
         android:id="@+id/addMarkdown"
-        android:name="com.example.markdown.AddMarkdown"
+        android:name="com.example.markdown.fragments.AddMarkdown"
         tools:layout="@layout/fragment_add_markdown"
         android:label="AddMarkdown" >
 

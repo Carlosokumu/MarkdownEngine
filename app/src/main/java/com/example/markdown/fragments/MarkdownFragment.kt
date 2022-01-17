@@ -1,4 +1,4 @@
-package com.example.markdown
+package com.example.markdown.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.Navigation
+import com.example.markdown.MarkdownFragmentDirections
+import com.example.markdown.R
 
 
 class MarkdownFragment : Fragment() {
@@ -18,7 +20,7 @@ class MarkdownFragment : Fragment() {
 
 
         add.setOnClickListener {
-            val action =  MarkdownFragmentDirections.actionHtmlToAddMarkdown()
+            val action = MarkdownFragmentDirections.actionHtmlToAddMarkdown()
             val navController = Navigation.findNavController(requireView())
             navController.navigate(action)
            // activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.nav_host_fragment,AddMarkdown(),"Now")?.addToBackStack(null)?.commit()

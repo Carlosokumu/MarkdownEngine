@@ -1,4 +1,4 @@
-package com.example.markdown
+package com.example.markdown.fragments
 
 
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.markdown.Const
 import com.example.markdown.view.EditScrollView
 import com.example.markdown.view.HorizontalEditScrollView
 import com.yydcdut.markdown.MarkdownConfiguration
