@@ -7,3 +7,7 @@ Write an application that takes in Markdown and outputs HTML, LaTeX, or any othe
 
 
 ## Setting Up
+To run the application locally:
+  - Clone the Repository
+  - Open it Using android Studio 3.0 or later
+  
