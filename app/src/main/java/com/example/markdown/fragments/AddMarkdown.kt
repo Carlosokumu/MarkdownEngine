@@ -32,9 +32,6 @@ class AddMarkdown : Fragment(), EditScrollView.onScrollChangedListener {
     private var mHorizontalEditScrollView: HorizontalEditScrollView? = null
     private var floatingActionButton: FloatingActionButton? = null
     private var mShortestDistance = -1
-    private  var isRx: Boolean = false
-
-
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
