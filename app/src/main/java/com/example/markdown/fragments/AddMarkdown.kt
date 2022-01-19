@@ -2,11 +2,16 @@ package com.example.markdown.fragments
 
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.markdown.Const
+import com.example.markdown.MarKBox
+import com.example.markdown.MarkDowns
 import com.example.markdown.view.EditScrollView
 import com.example.markdown.view.HorizontalEditScrollView
 import com.yydcdut.markdown.MarkdownConfiguration
@@ -15,23 +20,70 @@ import com.yydcdut.markdown.MarkdownProcessor
 import com.yydcdut.markdown.syntax.edit.EditFactory
 import com.yydcdut.rxmarkdown.RxMDEditText
 import  com.example.markdown.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.sdsmdg.tastytoast.TastyToast
 
 
 class AddMarkdown : Fragment(), EditScrollView.onScrollChangedListener {
-    private val mRxMDEditText: RxMDEditText? = null
+
+
     private var mMarkdownEditText: MarkdownEditText? = null
     private var mMarkdownProcessor: MarkdownProcessor? = null
     private var mHorizontalEditScrollView: HorizontalEditScrollView? = null
+    private var floatingActionButton: FloatingActionButton? = null
     private var mShortestDistance = -1
     private  var isRx: Boolean = false
+
+
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_add_markdown, container, false)
         val editScrollView = v.findViewById(R.id.edit_scroll) as EditScrollView
+        floatingActionButton =v.findViewById(R.id.fab)
         mHorizontalEditScrollView =v.findViewById(R.id.scroll_edit) as HorizontalEditScrollView
         mMarkdownEditText = v.findViewById(R.id.edit_md)
-       // mRxMDEditText = v.findViewById(R.id.edit_rx)
         mMarkdownEditText?.visibility = View.VISIBLE
+        if (mMarkdownEditText?.text.toString().length >= 0){
+            floatingActionButton?.visibility = View.VISIBLE
+        }
+
+        floatingActionButton?.setOnClickListener {
+
+            val  markDown = MarKBox.store.boxFor(MarkDowns::class.java)
+            val mMarkdown = MarkDowns(content = mMarkdownEditText?.text.toString())
+            markDown.put(mMarkdown)
+            AddMarkdownDirections.actionAddMarkdownToHtml()
+            TastyToast.makeText(requireContext(), "Successfully added  !", TastyToast.LENGTH_LONG, TastyToast.SUCCESS)
+        }
+
+        mMarkdownEditText?.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(char:  CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+
+
+            }
+
+            override fun afterTextChanged(text: Editable?) {
+
+                if (text != null) {
+                    if (text.isEmpty()){
+                        floatingActionButton?.visibility =View.GONE
+                    }
+                    else {
+                        floatingActionButton?.visibility =View.VISIBLE
+                    }
+                }
+
+
+            }
+
+        })
         mMarkdownEditText?.setOnClickListener {
 
         }

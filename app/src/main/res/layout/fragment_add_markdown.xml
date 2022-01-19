@@ -41,4 +41,13 @@
         android:layout_height="48dp"
         android:layout_alignParentBottom="true">
     </com.example.markdown.view.HorizontalEditScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="45dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"/>
 </RelativeLayout>

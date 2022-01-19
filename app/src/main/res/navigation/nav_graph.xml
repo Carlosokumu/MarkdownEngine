@@ -23,14 +23,22 @@
     <fragment
         android:id="@+id/laTex"
         android:name="com.example.markdown.fragments.LaTex"
-        android:label="fragment_la_tex"
-        tools:layout="@layout/fragment_la_tex" />
+        android:label="Latex"
+        tools:layout="@layout/fragment_la_tex">
+        <action
+            android:id="@+id/action_latex_to_html"
+            app:destination="@id/html" />
+
+    </fragment>
     <fragment
         android:id="@+id/addMarkdown"
         android:name="com.example.markdown.fragments.AddMarkdown"
         tools:layout="@layout/fragment_add_markdown"
         android:label="AddMarkdown" >
 
+        <action
+            android:id="@+id/action_addMarkdown_to_html"
+            app:destination="@id/html" />
     </fragment>
 
 

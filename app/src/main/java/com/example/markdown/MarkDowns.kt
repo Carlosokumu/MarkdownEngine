@@ -1,4 +1,12 @@
 package com.example.markdown
 
-class MarkDowns {
-}
+import io.objectbox.annotation.Entity
+import io.objectbox.annotation.Id
+
+
+@Entity
+data class MarkDowns(
+        @Id
+        var id: Long = 0,
+        var content: String? = null
+    )
