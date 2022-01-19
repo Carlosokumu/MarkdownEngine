@@ -22,11 +22,9 @@ class LaTex : Fragment() {
     ): View? {
 
 
-      //  val document = MarkdownDocument("file:///android_asset/READ.MD")
         val v = inflater.inflate(R.layout.fragment_la_tex, container, false)
-       // val mathView = v.findViewById<MTMathView>(R.id.mathview)
-       // mathView.latex = "x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}"
-        val parent_layout = v.findViewById<RelativeLayout>(R.id.parent_layout)
+
+        val parentLayout = v.findViewById<RelativeLayout>(R.id.parent_layout)
         val mathView = MathView(requireContext().applicationContext)
 
         mathView.isClickable = true
@@ -49,7 +47,7 @@ class LaTex : Fragment() {
             )
         )
 
-        parent_layout.addView(mathView)
+        parentLayout.addView(mathView)
         return v
 
     }
