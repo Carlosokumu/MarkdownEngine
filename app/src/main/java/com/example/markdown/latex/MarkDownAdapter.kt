@@ -43,11 +43,10 @@ class MarkDownAdapter: ListAdapter<MarkDowns, MarkDownAdapter.ViewHolder>(MarkDi
     inner  class  ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         fun bind(markDowns: MarkDowns){
+
            val markdownView = itemView.findViewById<MarkdownView>(R.id.markdownView)
-            //val type: Any = itemView.context.applicationContext.assets.open( "markdown_css_themes/classic.css")
             markdownView.loadMarkdown(markDowns.content, "file:///android_asset/markdown_css_themes/alt.css")
-           // markdownView.loadMarkdownFile(Const.Theme)
-            //markdownView.loadMarkdown(Const.Theme)
+
         }
     }
 
