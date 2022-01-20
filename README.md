@@ -34,3 +34,8 @@ in the Screen Below:
 The Screenshot Below shows converted markdown to Latex.
 
 <img src="https://github.com/Carlosokumu/MarkdownEngine/blob/master/screenshots/Screenshot_20220120-134749.png" width="280"/>
+
+
+## Some Notable Issues
+ *The Application is not yet tested on different screen sizes.
+
