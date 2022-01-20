@@ -17,6 +17,7 @@ This is home screen where initially there is no markdown added yet.The User is r
 <img src="https://github.com/Carlosokumu/MarkdownEngine/blob/master/screenshots/Screenshot_20220120-092220.png" width="280"/>
 
 ## Adding Markdown
-After the User taps on the add button,the add screen is displayed.To enhance UX,there's a sample markdown where the user can edit and know where to
-start.
-There is an improvised EditText that supports common Markdown Syntax.
+After the User taps on the add button,the add screen is displayed.To enhance UX,there's a sample markdown where the user can edit and know where to start.
+
+There is an improvised EditText that supports common Markdown Syntax like Headers.
+<img src="https://github.com/Carlosokumu/MarkdownEngine/blob/master/screenshots/Screenshot_20220120-124346.png" width="280"/>
