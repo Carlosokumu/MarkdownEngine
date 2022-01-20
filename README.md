@@ -13,4 +13,4 @@ To get started locally:
   
 ## Home Screen
 This is home screen where initially there is no markdown added yet.The User is required to tap the add button to add the markdown
-<img src="https://github.com/jumadeveloper/AndelaTrackChallenge/blob/master/screenshots/Screenshot_2017-11-04-23-06-12.png" width="280"/>
+<img src="https://github.com/Carlosokumu/MarkdownEngine/blob/master/screenshots/Screenshot_20220120-092220.png" width="280"/>
