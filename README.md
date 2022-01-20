@@ -37,5 +37,5 @@ The Screenshot Below shows converted markdown to Latex.
 
 
 ## Some Notable Issues
- *The Application is not yet tested on different screen sizes.
+ * The Application is not yet tested on different screen sizes.
 
