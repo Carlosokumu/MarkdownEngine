@@ -8,7 +8,7 @@
     tools:context=".fragments.LaTex">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/progress_indicator"
+        android:id="@+id/empty"
         android:layout_centerInParent="true"
         android:layout_width="300dp"
         android:visibility="gone"
@@ -16,23 +16,21 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/empty" />
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/laTexRecyclerView"
         android:layout_width="match_parent"
-        android:layout_centerInParent="true"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello Math!"
-
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:visibility="visible"
+        android:paddingBottom="@dimen/padding_rv_bottom"
+        android:paddingEnd="@dimen/card_list_margin"
+        android:paddingStart="@dimen/card_list_margin"
+        android:paddingTop="@dimen/card_list_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/latex_layout"
+        tools:visibility="visible" />
 
 
 

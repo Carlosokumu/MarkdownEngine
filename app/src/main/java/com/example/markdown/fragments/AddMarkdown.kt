@@ -7,10 +7,10 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.markdown.Const
-import com.example.markdown.MarKBox
+import androidx.navigation.Navigation
+import com.example.markdown.helpers.Const
+import com.example.markdown.smalldb.MarKBox
 import com.example.markdown.MarkDowns
 import com.example.markdown.view.EditScrollView
 import com.example.markdown.view.HorizontalEditScrollView
@@ -18,7 +18,6 @@ import com.yydcdut.markdown.MarkdownConfiguration
 import com.yydcdut.markdown.MarkdownEditText
 import com.yydcdut.markdown.MarkdownProcessor
 import com.yydcdut.markdown.syntax.edit.EditFactory
-import com.yydcdut.rxmarkdown.RxMDEditText
 import  com.example.markdown.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.sdsmdg.tastytoast.TastyToast
@@ -50,8 +49,11 @@ class AddMarkdown : Fragment(), EditScrollView.onScrollChangedListener {
             val  markDown = MarKBox.store.boxFor(MarkDowns::class.java)
             val mMarkdown = MarkDowns(content = mMarkdownEditText?.text.toString())
             markDown.put(mMarkdown)
-            AddMarkdownDirections.actionAddMarkdownToHtml()
-            TastyToast.makeText(requireContext(), "Successfully added  !", TastyToast.LENGTH_LONG, TastyToast.SUCCESS)
+
+            TastyToast.makeText(requireContext(), "Successfully added", TastyToast.LENGTH_LONG, TastyToast.SUCCESS)
+            val action = AddMarkdownDirections.actionAddMarkdownToHtml()
+            val navController = Navigation.findNavController(requireView())
+            navController.navigate(action)
         }
 
         mMarkdownEditText?.addTextChangedListener(object : TextWatcher{

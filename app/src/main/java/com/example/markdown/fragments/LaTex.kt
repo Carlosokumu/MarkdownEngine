@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RelativeLayout
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.example.markdown.Const
+import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
+import com.example.markdown.smalldb.MarKBox
 import com.example.markdown.R
-import katex.hourglass.`in`.mathlib.MathView
+import com.example.markdown.latex.LatexAdapter
 
 
 class LaTex : Fragment() {
@@ -24,6 +24,22 @@ class LaTex : Fragment() {
 
         val v = inflater.inflate(R.layout.fragment_la_tex, container, false)
 
+
+        val latexRecycler = v.findViewById<RecyclerView>(R.id.laTexRecyclerView)
+        val adapter = LatexAdapter()
+        adapter.submitList(MarKBox.getContents())
+        latexRecycler.adapter = adapter
+
+
+        if (MarKBox.getContents().isEmpty()){
+            v.findViewById<LottieAnimationView>(R.id.empty)?.visibility = View.VISIBLE
+        }
+
+        else {
+
+            LatexAdapter().submitList(MarKBox.getContents())
+        }
+        /*
         val parentLayout = v.findViewById<RelativeLayout>(R.id.parent_layout)
         val mathView = MathView(requireContext().applicationContext)
 
@@ -48,6 +64,8 @@ class LaTex : Fragment() {
         )
 
         parentLayout.addView(mathView)
+
+         */
         return v
 
     }

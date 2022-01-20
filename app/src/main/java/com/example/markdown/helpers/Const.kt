@@ -1,4 +1,4 @@
-package com.example.markdown
+package com.example.markdown.helpers
 
 object Const {
 

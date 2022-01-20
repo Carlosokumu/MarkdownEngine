@@ -16,10 +16,7 @@ import com.example.markdown.fragments.LaTexDirections
 import com.example.markdown.fragments.MarkdownFragmentDirections
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MarkDownActivity : AppCompatActivity(),
-    BottomNavigationView.OnNavigationItemSelectedListener,
-    NavController.OnDestinationChangedListener {
-
+class MarkDownActivity : AppCompatActivity(){
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +24,7 @@ class MarkDownActivity : AppCompatActivity(),
         setContentView(R.layout.activity_mark_down)
 
 
-       setSupportActionBar(findViewById(R.id.toolbar))
+        setSupportActionBar(findViewById(R.id.toolbar))
         val navController = findNavController(R.id.nav_host_fragment)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -39,63 +36,26 @@ class MarkDownActivity : AppCompatActivity(),
 
 
         findViewById<BottomNavigationView>(R.id.nav_view).apply {
-           // setupWithNavController(navController)
-            this.setupWithNavController(navController)
+
+            this.setupWithNavController(
+                Navigation.findNavController(
+                    this@MarkDownActivity,
+                    R.id.nav_host_fragment
+                )
+            )
         }
-        val navView = findViewById<BottomNavigationView>(R.id.nav_view)
-        navView.setOnNavigationItemSelectedListener(this)
+
 
     }
 
-    override fun onSupportNavigateUp() =
-        Navigation.findNavController(this, R.id.nav_host_fragment).navigateUp()
+    override fun onSupportNavigateUp() = Navigation.findNavController(this, R.id.nav_host_fragment).navigateUp()
 
-    @SuppressLint("ResourceType")
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.navigation_html -> {
-                val navController = Navigation.findNavController(this,R.id.nav_host_fragment)
-                navController.addOnDestinationChangedListener{ _, destination, _ ->
-                    if (destination.id == R.id.html){
-                        return@addOnDestinationChangedListener
-                    }
-                    else {
-                        //val action = LaTexD.htmlToLaTex()
-                        val action = LaTexDirections.actionLatexToHtml()
-                        val navController = Navigation.findNavController(this,R.id.nav_host_fragment)
-                        navController.navigate(action)
-                    }
-                }
-                return true
-            }
-            R.id.navigation_latex -> {
-                //val action = .actionHtmlToAddMarkdown()
-               // val action = MarkdownFragmentDirections.htmlToLaTex()
-                val navController = Navigation.findNavController(this,R.id.nav_host_fragment)
-                navController.addOnDestinationChangedListener{ _, destination, _ ->
-                    if (destination.id == R.id.laTex){
-                        return@addOnDestinationChangedListener
-                    }
-                    else {
-                        val action = MarkdownFragmentDirections.htmlToLaTex()
-                        val navController = Navigation.findNavController(this,R.id.nav_host_fragment)
-                        navController.navigate(action)
-                    }
-                }
-                //val navController = Navigation.findNavController(requireView())
-                 //navController.navigate(action)
-                // Respond to navigation item 2 click
-                return true
-            }
-            else -> return false
 
-        }
-        return true
-    }
 
-    override fun onDestinationChanged(controller: NavController, destination: NavDestination, arguments: Bundle?) {
 
-    }
+
+
+
 
     override fun onBackPressed() {
         super.onBackPressed()

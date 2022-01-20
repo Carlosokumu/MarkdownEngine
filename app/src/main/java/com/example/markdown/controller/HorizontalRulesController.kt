@@ -1,9 +1,8 @@
 package com.example.markdown.controller
 
 import android.text.Editable
-import android.widget.EditText
 import android.widget.Toast
-import com.example.markdown.Utils
+import com.example.markdown.helpers.Utils
 import com.yydcdut.markdown.MarkdownEditText
 import com.yydcdut.markdown.span.MDHorizontalRulesSpan
 

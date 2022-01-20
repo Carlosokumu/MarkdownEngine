@@ -2,9 +2,8 @@ package com.example.markdown.controller
 
 import android.text.Editable
 import android.widget.Toast
-import com.example.markdown.Utils
+import com.example.markdown.helpers.Utils
 import com.yydcdut.markdown.MarkdownEditText
-import com.yydcdut.markdown.utils.TextHelper.findBeforeNewLineChar
 
 
 class BlockQuotesController(private val mRxMDEditText: MarkdownEditText) {

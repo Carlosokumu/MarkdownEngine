@@ -12,6 +12,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.markdown.*
 import com.example.markdown.latex.MarkDownAdapter
+import com.example.markdown.smalldb.MarKBox
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 

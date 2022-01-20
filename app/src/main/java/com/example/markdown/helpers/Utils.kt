@@ -1,4 +1,4 @@
-package com.example.markdown
+package com.example.markdown.helpers
 
 import android.R.attr
 import android.text.style.AlignmentSpan
