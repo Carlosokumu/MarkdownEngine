@@ -12,6 +12,5 @@ To get started locally:
   - Open it Using android Studio 3.0 or later
   
 ## Home Screen
-This is home screen where initially there is no markdown added yet.The User is required to tap the add
-button to add the markdown
+This is home screen where initially there is no markdown added yet.The User is required to tap the add button to add the markdown
 <img src="https://github.com/jumadeveloper/AndelaTrackChallenge/blob/master/screenshots/Screenshot_2017-11-04-23-06-12.png" width="280"/>
