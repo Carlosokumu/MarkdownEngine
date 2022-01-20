@@ -21,3 +21,10 @@ After the User taps on the add button,the add screen is displayed.To enhance UX,
 
 There is an improvised EditText that supports common Markdown Syntax like Headers.
 <img src="https://github.com/Carlosokumu/MarkdownEngine/blob/master/screenshots/Screenshot_20220120-124346.png" width="280"/>
+
+
+After adding Markdown,the User's markdown is saved then converted  to Html and it's displayed in the home Screen as shown
+in the Screen Below:
+
+<img src="https://github.com/Carlosokumu/MarkdownEngine/blob/master/screenshots/Screenshot_20220120-124423.png" width="280"/>
+
