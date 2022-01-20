@@ -4,7 +4,8 @@ An application that takes in Markdown and outputs HTML, LaTeX
 **Background**
 
 Write an application that takes in Markdown and outputs HTML, LaTeX, or any other standard document format based on the input. It is not necessary that the entire syntax of Markdown be implemented, but of course the closer it is to the entire the better the work will appear. But elegance is the greatest desideratum.
-The final apk can be found [here](https://pages.github.com/)
+
+The final apk can be downloaded [here](https://github.com/Carlosokumu/MarkdownEngine/blob/master/app/release/app-release.apk)
 
 
 ## Setting Up
