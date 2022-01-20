@@ -12,4 +12,5 @@ To get started locally:
   - Open it Using android Studio 3.0 or later
   
 ## Home Screen
-This is home screen where initially there is no markdown added yet
+This is home screen where initially there is no markdown added yet.The User is required to tap the add
+button to add the markdown
