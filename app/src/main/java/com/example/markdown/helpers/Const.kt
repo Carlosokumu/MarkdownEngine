@@ -12,7 +12,7 @@ object Const {
             "The server serves like below:\n" +
             "\n" +
             "\n" +
-            "![Server Demo](demo/tcpwalk.gif)\n" +
+            "![Server Demo](https://github.com/Carlosokumu/PesapalHttp/blob/master/demo/tcpwalk.gif)\n" +
             "\n" +
             "\n" +
             "**Background**\n" +
