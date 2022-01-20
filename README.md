@@ -13,4 +13,5 @@ To get started locally:
   
 ## Home Screen
 This is home screen where initially there is no markdown added yet.The User is required to tap the add button to add one.
+
 <img src="https://github.com/Carlosokumu/MarkdownEngine/blob/master/screenshots/Screenshot_20220120-092220.png" width="280"/>
