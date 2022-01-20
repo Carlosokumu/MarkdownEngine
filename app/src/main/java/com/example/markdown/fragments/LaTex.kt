@@ -47,33 +47,7 @@ class LaTex : Fragment() {
 
             LatexAdapter().submitList(MarKBox.getContents())
         }
-        /*
-        val parentLayout = v.findViewById<RelativeLayout>(R.id.parent_layout)
-        val mathView = MathView(requireContext().applicationContext)
 
-        mathView.isClickable = true
-
-        mathView.setTextSize(14)
-
-        mathView.setTextColor(
-            ContextCompat.getColor(
-                 requireContext().applicationContext,
-                android.R.color.black
-            )
-        )
-
-        mathView.setDisplayText(Const.MD_SAMPLE)
-
-        mathView.setViewBackgroundColor(
-            ContextCompat.getColor(
-                requireContext().applicationContext,
-                android.R.color.white
-            )
-        )
-
-        parentLayout.addView(mathView)
-
-         */
         return v
 
     }

@@ -31,13 +31,9 @@ class MarkdownFragment : Fragment() {
         val  markDowns = MarKBox.store.boxFor(MarkDowns::class.java).all
         if (markDowns.isEmpty()){
             empty.visibility = View.VISIBLE
-            Toast.makeText(requireContext(),"It is Empty",Toast.LENGTH_SHORT).show()
             markRecycler.visibility = View.GONE
         }
-        else {
 
-            Toast.makeText(requireContext(),"It is not Empty",Toast.LENGTH_SHORT).show()
-        }
         val adapter = MarkDownAdapter()
         adapter.submitList(markDowns)
         markRecycler.adapter  = adapter
@@ -45,7 +41,7 @@ class MarkdownFragment : Fragment() {
             val action = MarkdownFragmentDirections.actionHtmlToAddMarkdown()
             val navController = Navigation.findNavController(requireView())
             navController.navigate(action)
-           // activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.nav_host_fragment,AddMarkdown(),"Now")?.addToBackStack(null)?.commit()
+
         }
 
         return v
