@@ -11,3 +11,5 @@ To get started locally:
   - Clone the Repository
   - Open it Using android Studio 3.0 or later
   
+## Home Screen
+This is home screen where initially there is no markdown added yet
