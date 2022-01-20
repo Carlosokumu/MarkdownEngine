@@ -4,5 +4,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="html">Html</string>
     <string name="latex">Latex</string>
-    <string name="add">Add Now</string>
+
+    <string name="add"><![CDATA[
+        No Markdown added. Tap the <font color=\'#22000000\'>+</font> button to add one now.
+        ]]>
+    </string>
+
 </resources>

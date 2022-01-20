@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
 import com.example.markdown.smalldb.MarKBox
 import com.example.markdown.R
+import com.example.markdown.helpers.SpaceItemDecoration
 import com.example.markdown.latex.LatexAdapter
 
 
@@ -26,7 +27,14 @@ class LaTex : Fragment() {
 
 
         val latexRecycler = v.findViewById<RecyclerView>(R.id.laTexRecyclerView)
+
+        latexRecycler.addItemDecoration(SpaceItemDecoration(
+            resources.getDimension(R.dimen.margin_small).toInt(),
+            resources.getDimension(R.dimen.margin).toInt())
+        )
         val adapter = LatexAdapter()
+
+
         adapter.submitList(MarKBox.getContents())
         latexRecycler.adapter = adapter
 

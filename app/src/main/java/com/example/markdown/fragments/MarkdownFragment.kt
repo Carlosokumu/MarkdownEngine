@@ -1,6 +1,7 @@
 package com.example.markdown.fragments
 
 import android.os.Bundle
+import android.text.Html
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -26,7 +27,7 @@ class MarkdownFragment : Fragment() {
         val empty = v.findViewById<LinearLayout>(R.id.empty)
         val fab = v.findViewById<FloatingActionButton>(R.id.fab)
 
-
+        add.text = Html.fromHtml(getString(R.string.add))
         val  markDowns = MarKBox.store.boxFor(MarkDowns::class.java).all
         if (markDowns.isEmpty()){
             empty.visibility = View.VISIBLE

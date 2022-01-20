@@ -26,9 +26,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:gravity="center"
+        android:textSize="@dimen/slide_desc"
         android:layout_margin="16dp"
         android:id="@+id/add"
-        android:drawableStart="@drawable/ic_add"
         android:textColor="#8A2BE2"
         android:layout_gravity="center"
         android:text="@string/add"
