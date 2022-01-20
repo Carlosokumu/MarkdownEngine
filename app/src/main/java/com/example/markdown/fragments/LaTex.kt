@@ -30,7 +30,7 @@ class LaTex : Fragment() {
 
         latexRecycler.addItemDecoration(SpaceItemDecoration(
             resources.getDimension(R.dimen.margin_small).toInt(),
-            resources.getDimension(R.dimen.margin).toInt())
+            resources.getDimension(R.dimen.margin).toInt(),requireContext()),
         )
         val adapter = LatexAdapter()
 
